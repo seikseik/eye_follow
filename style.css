@@ -1,0 +1,301 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Suisse";
+  src: url("assets/SuisseIntl-Medium.woff") format("woff"), url("assets/SuisseIntl-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal !important;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: "SuisseBold";
+  src: url("assets/SuisseIntl-Bold.woff") format("woff"), url("assets/SuisseIntl-Bold_1.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold !important;
+  text-rendering: optimizeLegibility;
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Suisse";
+  /* background-color: #F0F0F0; */
+  background-color: white;
+
+  font-size: 18px;
+}
+
+
+.containerBody {
+  /* margin: 10px auto; */
+  max-width: 100%;
+  padding: 10px;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* COLORS */
+  --main-header-primary-color: #101010;
+  --main-header-secondary-color: #151515;
+  --main-header-tertiary-color: #252525;
+  --main-header-quaternary-color: #aaa;
+  --main-header-shadow-color: rgba(0, 0, 0, 0.9);
+  /* FONT */
+  --main-header-font-family: $font, sans-serif;
+  /* MAIN HEADER */
+  --main-header-menu-width: 450px;
+  --main-header-menu-button-height: 40px;
+  --main-header-menu-button-width: 80px;
+  /* TRASITION */
+  --main-header-transition: all 0.35s ease;
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  font-family: "SuisseBold" !important;
+}
+
+
+
+.firstCircle {
+  width: 40vw;
+  height: 0;
+  position: relative;
+  padding-bottom: 40vw;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  z-index: -2;
+}
+
+.circle {
+  width: 55%;
+  height: 0;
+  padding-bottom: 55%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin-top: 60px;
+  position: relative;
+  z-index: 1;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+.circle:hover {
+  transform: scale(1.02);
+}
+.circle:hover .titoli:before {
+  content: "►";
+  margin-right: 8px;
+  opacity: 1;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+.circle a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+
+
+  .circle {
+    margin-top: 70px;
+    width: 60%;
+    height: 0;
+    padding-bottom: 60%;
+  }
+  .circle a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #020F49;
+  }
+  .circle #dataVizTitolo {
+    margin-top: 10px;
+  }
+  .circle .titoli {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+  }
+  .circle .titoli:after {
+    content: "→";
+    margin-left: 8px;
+  }
+
+  .firstCircle {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    width: 60%;
+    height: 0;
+    padding-bottom: 60%;
+  }
+}
+.yellow {
+  background-color: #FFAF1B;
+}
+
+.purple {
+  background-color: #D21A92;
+}
+
+.lightblue {
+  background-color: #0F9BC6;
+}
+
+#circle {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: visible;
+  z-index: -2;
+}
+
+#circle text {
+  font-family: "Suisse", Arial;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+#circle svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  -webkit-animation-name: rotate;
+  -moz-animation-name: rotate;
+  -ms-animation-name: rotate;
+  -o-animation-name: rotate;
+  animation-name: rotate;
+  -webkit-animation-duration: 12s;
+  -moz-animation-duration: 12s;
+  -ms-animation-duration: 12s;
+  -o-animation-duration: 12s;
+  animation-duration: 12s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -ms-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@media (max-width: 768px) {
+  #circle text {
+    font-size: 25px;
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotate {
+  from {
+    -moz-transform: rotate(0);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes rotate {
+  from {
+    -ms-transform: rotate(0);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate {
+  from {
+    -o-transform: rotate(0);
+  }
+  to {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.eye {
+  background-image: url(/assets/occhio.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 60%;
+  height: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.pupil {
+  background-color: #020F49;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  margin-top: -35px;
+  margin-left: -25px;
+  overflow: hidden;
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .pupil {
+    width: 30px;
+    height: 30px;
+    left: 58%;
+    top: 68%;
+  }
+}
