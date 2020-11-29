@@ -1,24 +1,5 @@
 
 
-$("#slider").slideReveal({
-  trigger: $("#trigger"),
-  position: "right",
-  push: false,
-  show: function(slider, trigger){
-    document.getElementById('slider').style.marginRight = '15px';
-    document.getElementById('trigger').classList.add('active');
-
-  },
-   hide: function(slider, trigger){
-     document.getElementById('slider').style.marginRight = '0px';
-     document.getElementById('trigger').classList.remove('active');
-
-  }
-});
-
-
-// heade
-
 
 // eyes
 
